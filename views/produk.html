@@ -1,0 +1,16 @@
+{{ template "layout" .}}
+{{ define "page" }}
+<form method="post" action="/produk">
+    <div><input id="nama" name="nama"></div>
+    <div><input id="harga" name="harga"></div>
+    <div><input id="stok" name="stok"></div>
+    <button>Simpan</button>
+</form>
+{{ range .}}
+<div id="{{ .ID }}">
+    <div>{{ .NAMA }}</div>
+    <div>{{ .HARGA }}</div>
+    <div>{{ .StatusStok }}</div>
+</div>
+{{ end }}
+{{ end }}
